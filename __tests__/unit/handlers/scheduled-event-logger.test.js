@@ -1,5 +1,5 @@
 // Import all functions from scheduled-event-logger.js
-const scheduledEventLogger = require('../../../src/handlers/scheduled-event-logger.js');
+import { handler } from '../../../src/index.js';
 
 describe('Test for sqs-payload-logger', function () {
   // This test invokes the scheduled-event-logger Lambda function and verifies that the received payload is logged
@@ -22,7 +22,7 @@ describe('Test for sqs-payload-logger', function () {
       "detail": {}
     }
 
-    await scheduledEventLogger.scheduledEventLoggerHandler(payload, null)
+    await handler(payload, null)
 
     // Verify that console.info has been called with the expected payload
     expect(console.info).toHaveBeenCalledWith(JSON.stringify(payload))

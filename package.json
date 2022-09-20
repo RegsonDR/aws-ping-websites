@@ -2,12 +2,18 @@
     "name": "aws-ping-websites",
     "description": "Pings websites and stores the ms in dynamodb",
     "version": "0.0.1",
+    "type": "module",
     "private": true,
-    "dependencies": {},
+    "dependencies": {
+        "aws-sdk": "^2.1126.0",
+        "axios": "^0.27.2",
+        "dotenv": "^16.0.0",
+        "uuid": "^8.3.2"
+    },
     "devDependencies": {
         "jest": "^26.6.3"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest --rootDir=__tests__"
     }
 }
